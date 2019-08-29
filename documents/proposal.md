@@ -3,3 +3,5 @@
 
 <h1>Objective</h1>
 <p>To provide a one-stop website that gives young millennials recommendations of popular/hyped books by analyzing general ratings on Goodreads as well as the user’s data. There are roughly 2.2 million new titles published each year, which can make finding a new book overwhelming, especially for young professionals looking for their next read. Most Americans read or listen to an average of 12 books a year (i.e., one book per month), meaning that each book needs to count. Thanks to social media, there is a lot of noise surrounding certain publications, such as <em>Becoming</em> by Michelle Obama or <em>Lean In</em> by Sheryl Sandenberg. Which book should a potential choose? This website will take advantage of the Goodreads API to provide recommendations that best fit into a reader’s lifestyle and reading goals.</p>
+
+UDPATE: It turns out that the Goodreads API uses XML as opposed to JSON. As such, I've changed my API to the New York Times, which is much more user friendly. I'll be focusing on their bestseller list. 
