@@ -1,7 +1,5 @@
 <template>
 <div id="app">
-  <h1:text="title">
-    </h1>
     <ul class="list-unstyled">
       <li class="media">
         <div class="media-body">
@@ -40,22 +38,6 @@
 </template>
 
 <script>
-/*export default {
-  Vue.component('child', {
-    props: ['text'],
-    template: `<div>{{ text }}<div>`
-  });
-
-  new Vue({
-    el: "#app",
-    data() {
-      return {
-        title: 'Home'
-      }
-    }
-  });
-}
-*/
 </script>
 
 <style lang="scss">
