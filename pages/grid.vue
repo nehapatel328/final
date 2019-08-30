@@ -112,17 +112,23 @@ import axios from "axios";
 
 new Vue({
   el: '#listOne',
-  data: {
-    results: []
+  data () {
+    return {
+      title: null,
+      loading: true,
+      errored: false
+    }
   },
   mounted() {
-    axios.get('https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?author=Ted%20Chiang&api-key=omt1RPMVtLZFNDcPmJZ4kL2c3xwtL1IB').then(response => {
-      this.title = response.data
+    axios
+    .get('https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?author=Ted%20Chiang&api-key=omt1RPMVtLZFNDcPmJZ4kL2c3xwtL1IB')
+    .then(response => (this.title = response.data))
+    .catch(error => {console.error(error)
+      this.errored = true
     })
+    .finally(() => this.loading = false)
   }
 });
-
-
 </script>
 
 <style lang="scss">
