@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container" id="app">
   <div class="row">
     <div class="col-md-auto py-3 px-lg-5 border bg-light row align-items-center mr-auto">
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
