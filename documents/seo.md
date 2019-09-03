@@ -12,7 +12,24 @@ There are plenty of tools out there to aid in SEO optimization, the key ones bei
 
 <h2>Method</h2>
 <p>
-We will be implementing an inbound content marketing strategy using Google Analytics and HubSpot to determine how many visitors arrive on our app and remain long enough to convert into customers. Each page will include the following in order to optimize our Key Performance Index (KPI):
+We will be implementing an inbound content marketing strategy using Google Analytics and HubSpot to determine how many visitors arrive on our app and remain long enough to convert into customers. The purpose of our inbound strategy will be to create a consistent pipeline of targeted users who have a higher chance of going down the marketing funnel and converting into paying customers. Our strategy will occur in 3 phases: (1) Optimize website infrastructure (2) Implement an SEO checklist for each page (3) Analyze web content every quarter and update accordingly.
+
+<h3>Phase 1: Optimize website infrastructure</h3>
+<p>
+Currently, our website does not have the infrastructure to support an inbound marketing campaign. We want to make the process of updating and uploading content and code to be adaptable and as templated as possible. The plan is as follows:</p>
+
+<ol>
+<li>Migrate the website to a CMS</li>
+<li>Create a Learning Center (for blog posts and an inbound link network)</li>
+<li>Create a CTA system through HubSpot</li>
+<li>Develop custom meta tags that can be used as templates</li>
+<li>Develop social media tags for the header and footer</li>
+<li>Connect the website to HubSpot</li>
+<li>Register the website with Google</li>
+</ol>
+
+<h3>Phase 2: Implement an SEO checklist for each page</h3>
+<p>Each web page and blog post will include the following in order to optimize our Key Performance Index (KPI):</p>
 <ul>
 <li>3 outbound links</li>
 <li>1 H1 tag with the targeted keyword</li>
@@ -23,3 +40,12 @@ We will be implementing an inbound content marketing strategy using Google Analy
 <li>Prominent social media links in the header and footer with corresponding meta tags</li>
 </ul>
 </p>
+
+<h3>Phase 3: Analyze web content every quarter and update accordingly</h3>
+<p>The key to a successful inbound marketing campaign is tracking the data and updating the website accordingly. Here are the steps we will implement:</p>
+<ul>
+<li>Create a custom tag for every link so we know where users are going.</li>
+<li>Register the IP addresses of all employees so their data isn't muddled with that of users.</li>
+<li>Track the number of impressions, click through rates, and bounce rates via Google Analytics.</li>
+<li>Cross reference Google Data with HubSpot to see where users are on the Marketing Funnel.</li>
+</ul>
