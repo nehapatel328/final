@@ -8,6 +8,7 @@ There are plenty of tools out there to aid in SEO optimization, the key ones bei
 <ul>
 <li>Google Analytics</li>
 <li>HubSpot</li>
+<li>CMS system (possibly WordPress)</li>
 </ul>
 
 <h2>Method</h2>
