@@ -6,7 +6,7 @@
         <h5 class="mt-0 mb-1">Bestsellers with Rainbow in the Title</h5>
         <p>{{info}}</p>
         <p v-for="title in titles" :title-index="$index" :title-name="title.name" :title-status="title.status">
-          {{title}}</p>
+        </p>
 
 
 
@@ -48,6 +48,7 @@ export default ({
 
   head: {
     title: process.env.npm_package_name || '',
+    props: ['title'],
     meta: [{
         charset: 'utf-8'
       },
@@ -77,12 +78,6 @@ export default ({
       }
     ]
   },
-
-  props: [{
-    name: 'string',
-    index: 'string',
-    checked: 'false'
-  }],
 
   data() {
     return {
