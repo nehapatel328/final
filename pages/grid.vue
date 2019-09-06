@@ -16,19 +16,13 @@
             <b-col md="6">
               <b-card-body title="Ted Chiang">
                 <b-card-text>
-                <ul class="userWrap">
+                <ul class="card" v-if="titles">
                   <li
-                    v-for="(entry, index) in users"
-                    v-if="entry[fkey] === filter || filter === 'All'"
-                    :item="entry"
-                    :key="index"
+                    v-for="title of titles"
+                    :key="title.id"
+                    :title="title"
                     class="user"
-                  >
-                    <h2 class="title">{{ entry.name }}</h2>
-                    <span class="language">
-                      Primary Language: <strong>{{ entry.mainLanguage }}</strong>
-                    </span>
-                  </li>
+                  />
                 </ul>
                 </b-card-text>
               </b-card-body>
@@ -48,11 +42,11 @@
               <b-card-body title="Jhumpa Lahiri">
                 <b-card-text>
                   <ul>
-                    <li>{{ title }}</li>
-                    <li>{{ publisher }}</li>
-                    <li>{{ ranks_history }}</li>
-                    <li>{{ isbns }}</li>
-                    <li>{{ description }}</li>
+                    <li>Title: {{ title }}</li>
+                    <li>Publisher: {{ publisher }}</li>
+                    <li>Rank: {{ ranks_history }}</li>
+                    <li>Isbns: {{ isbns }}</li>
+                    <li>Description: {{ description }}</li>
                   </ul>
                 </b-card-text>
               </b-card-body>
@@ -126,6 +120,47 @@ import axios from "axios";
 export default ({
 
   el: '#app',
+
+    head: {
+      title: process.env.npm_package_name || '',
+      props: ['title'],
+      meta: [{
+          charset: 'utf-8'
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: process.env.npm_package_description || ''
+        }
+      ],
+      link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }],
+      script: [{
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js'
+        },
+        {
+          src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'
+        },
+        {
+          src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'
+        }
+      ]
+    },
+
+    data() {
+      return {
+        info: null,
+        loading: true,
+        errored: false
+      }
+    },
   data: function() {
     return {
       title: null,
@@ -137,8 +172,9 @@ export default ({
   },
   mounted() {
     axios
-      .get('https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?author=Ted%20Chiang&api-key=omt1RPMVtLZFNDcPmJZ4kL2c3xwtL1IB')
+      .get('https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=omt1RPMVtLZFNDcPmJZ4kL2c3xwtL1IB')
       .then(response => (this.title = response.data))
+      .then(response => (this.description = response.data))
       .then(res => res.json())
       .then(res => (this.users = res))
       .catch(error => {
@@ -151,22 +187,6 @@ export default ({
 </script>
 
 <style lang="scss">
-.userWrap {
-  list-style-type: none;
-  padding: 2%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
-}
 
-.user {
-  padding: 10px;
-  margin: 1% 0;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  width: 45%;
-  text-align: left;
-}
 
 </style>

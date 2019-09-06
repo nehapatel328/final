@@ -39,16 +39,47 @@
 <script>
 //key: 9fuidq7Hi2xA7tbWcwm6yg and secret: OU4YIn6T27PY35KVUQRi5hAKAmemPM2hYwPBvY4Bg
 export default {
-head: {
-  titleTemplate: '%s - Nuxt.js',
-  meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
-    // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-    { hid: 'description', name: 'description', content: 'Meta description' }
-  ]
-}
+  head: {
+    title: process.env.npm_package_name || '',
+    props: ['title'],
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
+    ],
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }],
+    script: [{
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js'
+      },
+      {
+        src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'
+      },
+      {
+        src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'
+      }
+    ]
+  },
+
+  data() {
+    return {
+      info: null,
+      loading: true,
+      errored: false
+    }
+  },
 }
 </script>
 
