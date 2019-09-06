@@ -115,10 +115,10 @@
 
 <script>
 const url = 'https://api.nytimes.com/svc/books/v3'
+import title from '~/components/title.vue';
 import axios from "axios";
 
 export default ({
-
   el: '#app',
 
     head: {
@@ -156,12 +156,16 @@ export default ({
 
     data() {
       return {
-        info: null,
-        loading: true,
+      loading: true,
+      titles: null,
         errored: false
       }
     },
-  data: function() {
+    components: {
+    title
+    },
+
+    data: function() {
     return {
       title: null,
       loading: true,
@@ -176,7 +180,7 @@ export default ({
       .then(response => (this.title = response.data))
       .then(response => (this.description = response.data))
       .then(res => res.json())
-      .then(res => (this.users = res))
+      .then(res => (this.title = res))
       .catch(error => {
         console.error(error)
         this.errored = true
